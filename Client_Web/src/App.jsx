@@ -6,6 +6,7 @@ import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
 import AdminMain from "./pages/Admin/Main";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
 
         <Route path="/admin" element={<AdminMain />}></Route>
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   )
 }
