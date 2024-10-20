@@ -6,7 +6,7 @@ import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
 import AdminMain from "./pages/Admin/Main";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer";
 
 function App() {
   return (
