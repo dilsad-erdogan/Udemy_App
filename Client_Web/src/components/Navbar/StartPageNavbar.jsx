@@ -34,7 +34,7 @@ const StartPageNavbar = () => {
 
   return (
     <nav>
-        <div className="container py-10 flex justify-between items-center">
+        <div className="container py-8 flex justify-between items-center">
             {/* Logo Section */}
             <div>
                 <h1 className="font-bold text-2xl">UDEMY | DLSD</h1>
