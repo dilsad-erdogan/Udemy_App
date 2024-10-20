@@ -1,7 +1,10 @@
+import StartPageNavbar from "../components/Navbar/StartPageNavbar"
 
 const StartingPage = () => {
   return (
-    <div>StartingPage</div>
+    <main className="overflow-x-hidden bg-white text-dark">
+      <StartPageNavbar />
+    </main>
   )
 }
 
