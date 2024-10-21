@@ -9,6 +9,7 @@ const ExplanationCard = ({ data }) => {
             <div className="flex flex-col justify-center gap-4 sm:pl-3 pt-12 sm:pt-0 text-center sm:text-left">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">{data.title}</h1>
                 <p className="text-xl sm:text-3xl lg:text-xl font-bold text-right">{data.teacher}</p>
+                <p className="text-xl sm:text-3xl lg:text-xl font-bold text-right">${data.price}</p>
                 <p className="text-xl sm:text-3xl lg:text-xl font-bold break-words">{data.description}</p>
             </div>
         </div> 

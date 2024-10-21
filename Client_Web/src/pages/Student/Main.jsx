@@ -7,6 +7,7 @@ const HeroData = [
     title: "Class_1",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt5pAdBxxD0yj3vFDvdqUog61C-s-3dV9DQ&s"
   },
   {
@@ -14,6 +15,7 @@ const HeroData = [
     title: "Class_2",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-yT7qz5jH4X9pFJ80ZT6hOp4dA7iks07t6A&s"
   },
   {
@@ -21,6 +23,7 @@ const HeroData = [
     title: "Class_3",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmSuIL0tOShiHt6rz1IarYMo21bVtW4GDg&s"
   },
   {
@@ -28,6 +31,7 @@ const HeroData = [
     title: "Class_4",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -35,6 +39,7 @@ const HeroData = [
     title: "Class_5",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -42,6 +47,7 @@ const HeroData = [
     title: "Class_6",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -49,6 +55,7 @@ const HeroData = [
     title: "Class_7",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -56,6 +63,7 @@ const HeroData = [
     title: "Class_8",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
+    price: "20",
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
 ];
