@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
+import Modal from "../Modal";
+import Login from "../userOperations/Login";
+import Register from "../userOperations/Register";
+import FALogin from "../userOperations/FALogin";
 
 const NavbarMenu = [
     {
@@ -31,6 +35,23 @@ const NavbarMenu = [
 
 const StartPageNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState("login");
+
+  const openRegister = () => {
+    setIsLogin("register");
+    setIsModalOpen(true);
+  };
+
+  const openLogin = () => {
+    setIsLogin("login");
+    setIsModalOpen(true);
+  };
+
+  const openFALogin = () => {
+    setIsLogin("falogin");
+    setIsModalOpen(true);
+  };
 
   return (
     <nav>
@@ -52,7 +73,7 @@ const StartPageNavbar = () => {
                         </li>
                     ))}
 
-                    <button className="primary-btn">Login</button>
+                    <button className="primary-btn" onClick={() => setIsModalOpen(true)}>Login</button>
                 </ul>
             </div>
 
@@ -73,11 +94,17 @@ const StartPageNavbar = () => {
                             </li>
                         ))}
 
-                        <button className="primary-btn">Login</button>
+                        <button className="primary-btn" onClick={() => setIsModalOpen(true)}>Login</button>
                     </ul>                        
                 </div>
             )}
         </div>
+
+        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+            { isLogin === "login" && <Login openFALogin={openFALogin} openRegister={openRegister} /> }
+            { isLogin === "register" && <Register openLogin={openLogin} /> }
+            { isLogin === "falogin" && <FALogin openLogin={openLogin} openRegister={openRegister} /> }
+        </Modal>
     </nav>
   )
 }
