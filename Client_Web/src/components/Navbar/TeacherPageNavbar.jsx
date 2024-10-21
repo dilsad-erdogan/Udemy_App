@@ -12,11 +12,11 @@ const TeacherPageNavbar = () => {
             <div className="flex">
                 <a href="/teacher/video" className="inline-block py-2 px-3 hover:text-secondary relative group font-bold">
                     <div className="w-2 h-2 absolute bg-secondary mt-2 rounded-full left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden"></div>
-                    My Videos
+                    Add Video
                 </a>
                 <a href="/teacher/live" className="inline-block py-2 px-3 hover:text-secondary relative group font-bold">
                     <div className="w-2 h-2 absolute bg-secondary mt-2 rounded-full left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden"></div>
-                    My Lives
+                    Add Live
                 </a>
             </div>
 
