@@ -1,5 +1,6 @@
 import SliderHero from "../../components/Hero/SliderHero"
 import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar"
+import Video from "../../components/Video/Video";
 
 const HeroData = [
   {
@@ -73,6 +74,7 @@ const Main = () => {
     <main className="overflow-x-hidden bg-white text-dark">
       <StudentPageNavbar />
       <SliderHero HeroData={HeroData} />
+      <Video HeroData={HeroData} />
     </main>
   )
 }
