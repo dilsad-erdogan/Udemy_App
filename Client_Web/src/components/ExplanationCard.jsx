@@ -3,7 +3,7 @@ const ExplanationCard = ({ data }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2">
             <div className="flex flex-col gap-5">
                 <img src={data.videoUrl} alt="" className="w-[300px] sm:w-[500px] mx-auto" />
-                <button className="primary-btn mt-5">Add Basket</button>
+                <button className="primary-btn mt-5">Add to Cart</button>
             </div>
 
             <div className="flex flex-col justify-center gap-4 sm:pl-3 pt-12 sm:pt-0 text-center sm:text-left">
