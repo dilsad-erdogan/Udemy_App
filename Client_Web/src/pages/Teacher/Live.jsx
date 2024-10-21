@@ -1,7 +1,10 @@
+import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar"
 
 const Live = () => {
   return (
-    <div>Live</div>
+    <main className="overflow-x-hidden bg-white text-dark">
+      <TeacherPageNavbar />
+    </main>
   )
 }
 

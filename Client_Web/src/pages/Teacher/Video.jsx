@@ -1,7 +1,10 @@
+import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar"
 
 const Video = () => {
   return (
-    <div>Video</div>
+    <main className="overflow-x-hidden bg-white text-dark">
+      <TeacherPageNavbar />
+    </main>
   )
 }
 
