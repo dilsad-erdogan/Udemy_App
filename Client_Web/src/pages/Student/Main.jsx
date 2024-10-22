@@ -7,7 +7,7 @@ const Main = () => {
     <main className="overflow-x-hidden bg-white text-dark">
       <StudentPageNavbar />
       <SliderHero />
-      <Video />
+      <Video isMy={false}/>
     </main>
   )
 }
