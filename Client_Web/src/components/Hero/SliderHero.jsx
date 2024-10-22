@@ -1,7 +1,10 @@
 import Slider from "react-slick";
 import ExplanationCard from "../ExplanationCard";
+import { useSelector } from "react-redux";
 
-const SliderHero = ({ HeroData }) => {
+const SliderHero = () => {
+    const videos = useSelector(state => state.video);
+
     const settings = {
         dots: false,
         arrows: false,
@@ -20,7 +23,7 @@ const SliderHero = ({ HeroData }) => {
                 <div className="container pb-8 sm:pb-0">
                     {/* Hero section */}
                     <Slider {...settings}>
-                        {HeroData.slice(0,4).map((data) => (
+                        {videos.videos.slice(0,4).map((data) => (
                             <div key={data._id}>
                                 <ExplanationCard data={data} />                               
                             </div>
