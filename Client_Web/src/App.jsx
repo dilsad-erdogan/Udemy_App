@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StartingPage from "./pages/StartingPage";
 import StudentMain from "./pages/Student/Main";
 import StudentVideo from "./pages/Student/Video";
+import StudentCart from "./pages/Student/Cart";
 import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
@@ -17,7 +18,7 @@ const Data = [
     title: "Class_1",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt5pAdBxxD0yj3vFDvdqUog61C-s-3dV9DQ&s"
   },
   {
@@ -25,7 +26,7 @@ const Data = [
     title: "Class_2",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-yT7qz5jH4X9pFJ80ZT6hOp4dA7iks07t6A&s"
   },
   {
@@ -33,7 +34,7 @@ const Data = [
     title: "Class_3",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmSuIL0tOShiHt6rz1IarYMo21bVtW4GDg&s"
   },
   {
@@ -41,7 +42,7 @@ const Data = [
     title: "Class_4",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -49,7 +50,7 @@ const Data = [
     title: "Class_5",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -57,7 +58,7 @@ const Data = [
     title: "Class_6",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -65,7 +66,7 @@ const Data = [
     title: "Class_7",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
   {
@@ -73,7 +74,7 @@ const Data = [
     title: "Class_8",
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
-    price: "20",
+    price: 20,
     videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
   },
 ];
@@ -92,6 +93,7 @@ function App() {
 
         <Route path="/student" element={<StudentMain />}></Route>
         <Route path="/student/video" element={<StudentVideo />}></Route>
+        <Route path="/student/cart" element={<StudentCart />}></Route>
 
         <Route path="/teacher" element={<TeacherMain />}></Route>
         <Route path="/teacher/video" element={<TeacherVideo />}></Route>

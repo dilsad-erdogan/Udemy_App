@@ -24,7 +24,6 @@ const cartSlice = createSlice({
                     teacher: newItem.teacher,
                     price: newItem.price,
                     videoUrl: newItem.videoUrl,
-                    quantity: 1,
                     totalPrice: newItem.price
                 })
             }
@@ -38,34 +37,12 @@ const cartSlice = createSlice({
             const findItem = state.videos.find((item) => item._id === id);
             if(findItem) {
                 state.totalPrice -= findItem.totalPrice;
-                state.totalQuantity -= findItem.quantity;
+                state.totalQuantity--;
                 state.videos = state.videos.filter(item => item._id !== id);
-            }
-        },
-
-        decreaseQuantity(state, action) {
-            const id = action.payload;
-            const findItem = state.videos.find((item) => item._id === id);
-            if(findItem) {
-                if(findItem.quantity > 1){
-                    findItem.quantity -= 1;
-                    state.totalPrice -= findItem.price;
-                    state.totalQuantity -= 1;
-                }
-            }
-        },
-        
-        increaseQuantity(state, action) {
-            const id = action.payload;
-            const findItem = state.videos.find((item) => item._id === id);
-            if(findItem) {
-                findItem.quantity += 1;
-                state.totalPrice += findItem.price;
-                state.totalQuantity += 1;
             }
         }
     },
 });
 
-export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer
