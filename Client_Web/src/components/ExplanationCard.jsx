@@ -21,7 +21,7 @@ const ExplanationCard = ({ data }) => {
             </div>
 
             <div className="flex flex-col gap-5">
-                <img src={data.videoUrl} alt="" className="w-[300px] sm:w-[500px] mx-auto" />
+                <img src={data.videoPng} alt="" className="w-[300px] sm:w-[500px] mx-auto" />
                 <button className="primary-btn mt-5" onClick={(e) => handleAddToCart(e, data)}>Add to Cart</button>
             </div>
 

@@ -20,7 +20,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt5pAdBxxD0yj3vFDvdqUog61C-s-3dV9DQ&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt5pAdBxxD0yj3vFDvdqUog61C-s-3dV9DQ&s",
+    videoUrl: "https://www.youtube.com/watch?v=rPvPdeAB_pM"
   },
   {
     _id: 2,
@@ -28,7 +29,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-yT7qz5jH4X9pFJ80ZT6hOp4dA7iks07t6A&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-yT7qz5jH4X9pFJ80ZT6hOp4dA7iks07t6A&s",
+    videoUrl: "https://www.youtube.com/watch?v=YpPXTYFkql0"
   },
   {
     _id: 3,
@@ -36,7 +38,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmSuIL0tOShiHt6rz1IarYMo21bVtW4GDg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmSuIL0tOShiHt6rz1IarYMo21bVtW4GDg&s",
+    videoUrl: "https://www.youtube.com/watch?v=Fzv-rgwcFKk"
   },
   {
     _id: 4,
@@ -44,7 +47,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s",
+    videoUrl: "https://www.youtube.com/watch?v=msGQOO6f3h0"
   },
   {
     _id: 5,
@@ -52,7 +56,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s",
+    videoUrl: "https://www.youtube.com/watch?v=8eSsUWOU18I"
   },
   {
     _id: 6,
@@ -60,7 +65,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s",
+    videoUrl: "https://www.youtube.com/watch?v=CfqEP0uJyX0"
   },
   {
     _id: 7,
@@ -68,7 +74,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s",
+    videoUrl: "https://www.youtube.com/watch?v=vikzxIRDZOU"
   },
   {
     _id: 8,
@@ -76,7 +83,8 @@ const Data = [
     description: "sdfghjnhbvsdefrtgyhjnhbvcxsdrftgyhjukmnbhvgfcdcftgyhjmnvffgtyhjuOLKJhgtfdxsdrftgyhgvfcdxcfg.",
     teacher: "Teacher_1",
     price: 20,
-    videoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s"
+    videoPng: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEJVmxpp5xZpcAo4UkYFkUu99HIlSvj0Uzg&s",
+    videoUrl: "https://www.youtube.com/watch?v=w-WOJ2afMic"
   },
 ];
 

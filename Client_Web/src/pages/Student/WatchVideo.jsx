@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar";
 import ChatBox from "../../components/Chat/ChatBox";
 import SendMessage from "../../components/Chat/SendMessage";
+import ReactPlayer from 'react-player';
 
 const WatchVideo = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const WatchVideo = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
         <div className="col-span-2 flex justify-center items-center bg-gray-100 p-4">
-          <img src={video.videoUrl} alt="Video" className="w-full h-auto" />
+            <ReactPlayer url={video.videoUrl} controls width="100%" height="500px" />
         </div>
 
         <div className="col-span-1 flex flex-col border-l p-4 relative">
