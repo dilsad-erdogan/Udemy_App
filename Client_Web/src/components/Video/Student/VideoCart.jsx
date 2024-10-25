@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa"
-import Modal from "../Modal";
-import ExplanationCard from "../ExplanationCard";
+import Modal from "../../Modal";
+import ExplanationCard from "../../ExplanationCard";
 
 const VideoCart = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

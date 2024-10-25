@@ -1,6 +1,6 @@
 import SliderHero from "../../components/Hero/SliderHero"
 import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar"
-import Video from "../../components/Video/Video";
+import Video from "../../components/Video/Student/Video";
 
 const Main = () => {
   return (

@@ -1,5 +1,5 @@
 import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar";
-import Videos from "../../components/Video/Video";
+import Videos from "../../components/Video/Student/Video";
 
 const Video = () => {
   return (
