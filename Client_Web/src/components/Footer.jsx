@@ -8,9 +8,9 @@ const Footer = () => {
         <a href="#" className="text-primary tracking-widest text-2xl font-bold sm:text-3xl">UDEMY | DLSD</a>
         <p className="text-gray-600 lg:pr-24 pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores alias cum</p>
         <p className="text-gray-500 mt-4">Made with 💕 by The Dilşad Rukiye Erdoğan</p>
-        <div className="flex gap-3">
-          <a href="https://www.linkedin.com/in/dilşad-erdoğan-089547221/" target="_blank" className="inline-block bg-primary/90 text-white py-2 px-4 mt-4 text-sm rounded-full">Visit my Linkedin Profile</a>
-          <a href="https://github.com/dilsad-erdogan" target="_blank" className="inline-block bg-primary/90 text-white py-2 px-4 mt-4 ml-2 text-sm rounded-full">Visit my Github Profile</a>                      
+        <div className="flex gap-3 pt-5">
+          <a href="https://www.linkedin.com/in/dilşad-erdoğan-089547221/" target="_blank" className="primary-btn">Visit my Linkedin Profile</a>
+          <a href="https://github.com/dilsad-erdogan" target="_blank" className="primary-btn">Visit my Github Profile</a>                      
         </div>
       </div>
 
