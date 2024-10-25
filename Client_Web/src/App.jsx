@@ -7,6 +7,7 @@ import WatchVideo from "./pages/Student/WatchVideo";
 import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
+import UpdateVideo from "./pages/Teacher/UpdateVideo";
 import AdminMain from "./pages/Admin/Main";
 import Footer from "./components/Footer";
 import { useDispatch } from "react-redux";
@@ -108,6 +109,7 @@ function App() {
         <Route path="/teacher" element={<TeacherMain />}></Route>
         <Route path="/teacher/video" element={<TeacherVideo />}></Route>
         <Route path="/teacher/live" element={<TeacherLive />}></Route>
+        <Route path="/updateVideo/:id" element={<UpdateVideo />}></Route>
 
         <Route path="/admin" element={<AdminMain />}></Route>
       </Routes>
