@@ -15,8 +15,7 @@ const videoSlice = createSlice({
         },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload
-            state.filteredData = state.videos.filter(data => data.name.toLowerCase().includes(state.searchTerm.toLowerCase())
-            )
+            state.filteredData = state.videos.filter(data => data.name.toLowerCase().includes(state.searchTerm.toLowerCase()))
         }
     },
 });
