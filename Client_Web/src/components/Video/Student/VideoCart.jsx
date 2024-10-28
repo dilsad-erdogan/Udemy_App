@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa"
 import Modal from "../../Modal";
-import ExplanationCard from "../../ExplanationCard";
+import ModalCard from "../../Cart/ModalCard";
 
 const VideoCart = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +29,7 @@ const VideoCart = ({ data }) => {
       </div>
 
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <ExplanationCard data={data} />
+        <ModalCard data={data} />
       </Modal>
     </div>
   )

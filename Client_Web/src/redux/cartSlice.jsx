@@ -23,6 +23,7 @@ const cartSlice = createSlice({
                     description: newItem.description,
                     teacher: newItem.teacher,
                     price: newItem.price,
+                    videoPng: newItem.videoPng,
                     videoUrl: newItem.videoUrl,
                     totalPrice: newItem.price
                 })

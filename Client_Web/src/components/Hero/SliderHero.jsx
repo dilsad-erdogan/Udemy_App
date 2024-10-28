@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import ExplanationCard from "../ExplanationCard";
+import ExplanationCard from "../Cart/ExplanationCard";
 import { useSelector } from "react-redux";
 
 const SliderHero = () => {

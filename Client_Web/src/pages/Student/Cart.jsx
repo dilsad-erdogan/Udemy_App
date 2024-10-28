@@ -6,6 +6,7 @@ import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar";
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
+    console.log(cart.videos)
     const dispatch = useDispatch();
 
     return (
