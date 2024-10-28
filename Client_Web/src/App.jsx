@@ -117,7 +117,7 @@ function App() {
         <Route path="/teacher/live" element={<TeacherLive />}></Route>
         <Route path="/updateVideo/:id" element={<UpdateVideo />}></Route>
 
-        <Route path="/admin/users" element={<Users />}></Route>
+        <Route path="/admin" element={<Users />}></Route>
         <Route path="/admin/videos" element={<Videos />}></Route>
         <Route path="/admin/lives" element={<Lives />}></Route>
         <Route path="/admin/permissions" element={<Permissions />}></Route>
