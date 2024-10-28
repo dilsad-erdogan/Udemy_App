@@ -9,7 +9,6 @@ import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
 import UpdateVideo from "./pages/Teacher/UpdateVideo";
-import AdminMain from "./pages/Admin/Main";
 import Users from "./pages/Admin/Users";
 import Videos from "./pages/Admin/Videos";
 import Lives from "./pages/Admin/Lives";
@@ -118,7 +117,6 @@ function App() {
         <Route path="/teacher/live" element={<TeacherLive />}></Route>
         <Route path="/updateVideo/:id" element={<UpdateVideo />}></Route>
 
-        <Route path="/admin" element={<AdminMain />}></Route>
         <Route path="/admin/users" element={<Users />}></Route>
         <Route path="/admin/videos" element={<Videos />}></Route>
         <Route path="/admin/lives" element={<Lives />}></Route>
