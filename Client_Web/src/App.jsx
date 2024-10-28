@@ -4,6 +4,7 @@ import StudentMain from "./pages/Student/Main";
 import StudentVideo from "./pages/Student/Video";
 import StudentCart from "./pages/Student/Cart";
 import WatchVideo from "./pages/Student/WatchVideo";
+import WatchLive from "./pages/Student/WatchLive";
 import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
@@ -105,6 +106,7 @@ function App() {
         <Route path="/student/video" element={<StudentVideo />}></Route>
         <Route path="/student/cart" element={<StudentCart />}></Route>
         <Route path="/watch/:id" element={<WatchVideo />}></Route>
+        <Route path="/watchLive/:id" element={<WatchLive />}></Route>
 
         <Route path="/teacher" element={<TeacherMain />}></Route>
         <Route path="/teacher/video" element={<TeacherVideo />}></Route>

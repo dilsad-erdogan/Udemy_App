@@ -25,7 +25,7 @@ const SliderHero = () => {
                     <Slider {...settings}>
                         {videos.videos.slice(0,4).map((data) => (
                             <div key={data._id}>
-                                <ExplanationCard data={data} />                               
+                                <ExplanationCard data={data} />
                             </div>
                         ))}
                     </Slider>
