@@ -10,6 +10,11 @@ import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
 import UpdateVideo from "./pages/Teacher/UpdateVideo";
 import AdminMain from "./pages/Admin/Main";
+import Users from "./pages/Admin/Users";
+import Videos from "./pages/Admin/Videos";
+import Lives from "./pages/Admin/Lives";
+import Permissions from "./pages/Admin/Permissions";
+import Purchases from "./pages/Admin/Purchases";
 import Footer from "./components/Footer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -114,6 +119,11 @@ function App() {
         <Route path="/updateVideo/:id" element={<UpdateVideo />}></Route>
 
         <Route path="/admin" element={<AdminMain />}></Route>
+        <Route path="/admin/users" element={<Users />}></Route>
+        <Route path="/admin/videos" element={<Videos />}></Route>
+        <Route path="/admin/lives" element={<Lives />}></Route>
+        <Route path="/admin/permissions" element={<Permissions />}></Route>
+        <Route path="/admin/purchases" element={<Purchases />}></Route>
       </Routes>
 
       <Footer />
