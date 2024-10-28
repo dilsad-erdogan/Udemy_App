@@ -1,7 +1,10 @@
+import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
 
 const Users = () => {
   return (
-    <div>Users</div>
+    <main className="overflow-x-hidden bg-white text-dark">
+      <AdminPageNavbar />
+    </main>
   )
 }
 

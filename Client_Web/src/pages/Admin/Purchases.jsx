@@ -1,7 +1,10 @@
+import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
 
 const Purchases = () => {
   return (
-    <div>Purchases</div>
+    <main className="overflow-x-hidden bg-white text-dark">
+      <AdminPageNavbar />
+    </main>
   )
 }
 
