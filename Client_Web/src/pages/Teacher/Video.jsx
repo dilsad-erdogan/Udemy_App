@@ -44,7 +44,7 @@ const Video = () => {
               <textarea rows={8} value={desc} onChange={(e) => {setDesc(e.target.value)}} className="w-full text-xl p-2 border rounded-md resize-none" placeholder="Enter description" />
             </div>
 
-            <button type="submit" className="primary-btn">Düzenle</button>
+            <button type="submit" className="primary-btn">Send Video</button>
           </div>
         </form>
       </div>

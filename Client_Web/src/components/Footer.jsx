@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3">
               <FaLocationArrow className="text-3xl text-primary duration-300" />
-              <p className="text-lg duration-300">Selçuklu, Konya</p>
+              <p className="text-lg duration-300">Ankara, Türkiye</p>
             </div>
 
             <div className="flex items-center gap-3 mt-6">
