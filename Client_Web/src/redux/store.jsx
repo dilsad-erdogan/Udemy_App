@@ -8,12 +8,10 @@ import permissionSlice from "./permissionSlice";
 import purchaseSlice from "./purchaseSlice";
 import roleSlice from "./roleSlice";
 import userSlice from "./userSlice";
-import videosSlice from "./videosSlice";
 
 const store = configureStore({
     reducer: {
         cart: cartSlice,
-        video: videoSlice,
         message: messageSlice,
         auth: authSlice,
         live: liveSlice,
@@ -21,7 +19,7 @@ const store = configureStore({
         purchase: purchaseSlice,
         role: roleSlice,
         user: userSlice,
-        videos: videosSlice
+        video: videoSlice
     }
 });
 
