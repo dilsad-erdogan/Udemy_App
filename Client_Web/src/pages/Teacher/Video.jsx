@@ -1,5 +1,7 @@
 import { useState } from "react"
 import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar"
+import { useDispatch } from "react-redux";
+import { addPermission } from "../../redux/permissionSlice";
 
 const Video = () => {
   const [title, setTitle] = useState('');
@@ -8,7 +10,23 @@ const Video = () => {
   const [price, setPrice] = useState('');
   const [desc, setDesc] = useState('');
 
-  const handleSubmit = () => {};
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    const userData = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+
+    const newVideo = {
+      user_id: userData.user._id,
+      title: title,
+      description: desc,
+      video_png: png,
+      video_url: url,
+      price: price
+    };
+
+    dispatch(addPermission(newVideo));
+    alert('Your video send to admin.');
+  };
 
   return (
     <main className="overflow-x-hidden bg-white text-dark">

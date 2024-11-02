@@ -1,17 +1,28 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar";
 import ReactPlayer from 'react-player';
+import { fetchVideosByUser } from "../../redux/videoSlice";
 
 const UpdateVideo = () => {
     const { id } = useParams();
-    const videos = useSelector((state) => state.video.videos);
     const [video, setVideo] = useState();
+    const dispatch = useDispatch();
+    const videos = useSelector(state => state.video.videos);
 
     useEffect(() => {
-        const newVideo = videos.find((video) => video._id === parseInt(id));
-        setVideo(newVideo);
+        const userData = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+        if (userData && userData.user._id) {
+            dispatch(fetchVideosByUser(userData.user._id));
+        }
+    }, [dispatch]);
+
+    useEffect(() => {
+        if(videos?.data) {
+            const newVideo = videos.data.find((video) => video._id === id);
+            setVideo(newVideo);
+        }
     }, [id, videos]);
 
     const handleInputChange = (e) => {
@@ -34,7 +45,7 @@ const UpdateVideo = () => {
 
             <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
                 <div className="col-span-2 flex justify-center items-center bg-gray-100 p-4">
-                    <ReactPlayer url={video.videoUrl} controls width="100%" height="500px" />
+                    <ReactPlayer url={video.video_url} controls width="100%" height="500px" />
                 </div>
 
                 <div className="col-span-1 flex flex-col border-l p-4 space-y-4">
