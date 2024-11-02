@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
-import { useSelector } from "react-redux"
-
-const userEdit = (data) => {console.log(data)};
-const userDelete = (data) => {console.log(data)};
+import { useDispatch, useSelector } from "react-redux"
+import { fetchLiveData } from "../../redux/liveSlice";
 
 const Lives = () => {
-  const videos = useSelector(state => state.video);
+  const dispatch = useDispatch();
+  const liveDatas = useSelector(state => state.live.liveData);
+
+  useEffect(() => {
+    dispatch(fetchLiveData());
+  }, [dispatch]);
+
+  const userEdit = (data) => {console.log(data)};
+  const userDelete = (data) => {console.log(data)};
 
   return (
     <main className="overflow-x-hidden bg-white text-dark">
@@ -18,10 +25,9 @@ const Lives = () => {
               <table className="min-w-full divide-y divide-black">
                 <thead>
                   <tr>
+                    <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Teacher</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Title</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Description</th>
-                    <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Teacher</th>
-                    <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Price</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Video Png</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Video Url</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Edit</th>
@@ -30,18 +36,17 @@ const Lives = () => {
                 </thead>
             
                 <tbody className="divide-y divide-black">
-                  {videos.videos.map((data) => (
+                  {liveDatas?.data?.map((data) => (
                     <tr key={data._id}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.teacher_id}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.title}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.description}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.teacher}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.price}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.videoPng}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.videoUrl}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.video_png}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.video_url}</td>
+                      <td className="px-6 py-4 whitespace-nowrap justify-center text-sm font-medium">
                         <button type="button" className="primary-btn" onClick={() => userEdit(data._id)}>Edit</button>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                      <td className="px-6 py-4 whitespace-nowrap justify-center text-sm font-medium">
                         <button type="button" className="primary-btn" onClick={() => userDelete(data._id)}>Delete</button>
                       </td>
                     </tr>
