@@ -5,6 +5,7 @@ const liveSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     video_png: { type: String, required: true },
+    video_url: { type: String, required: true },
     date_time: { type: Date, default: Date.now },
     is_active: { type: Boolean }
 }, { timestamps: true });

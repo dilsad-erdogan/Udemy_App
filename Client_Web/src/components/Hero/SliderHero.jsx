@@ -1,9 +1,12 @@
 import Slider from "react-slick";
 import ExplanationCard from "../Cart/ExplanationCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchLiveData } from "../../redux/liveSlice";
 
 const SliderHero = () => {
-    const videos = useSelector(state => state.video);
+    const dispatch = useDispatch();
+    const lives = useSelector(state => state.live.liveData);
 
     const settings = {
         dots: false,
@@ -17,13 +20,17 @@ const SliderHero = () => {
         pauseOnFocus: true,
     };
 
+    useEffect(() => {
+        dispatch(fetchLiveData());
+    }, [dispatch]);
+
     return (
         <div className="container">
             <div className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] bg-gradient-to-r from-white to-gray-100 flex justify-center items-center">
                 <div className="container pb-8 sm:pb-0">
                     {/* Hero section */}
                     <Slider {...settings}>
-                        {videos.videos.slice(0,4).map((data) => (
+                        {lives?.data?.slice(0, 4).map((data) => (
                             <div key={data._id}>
                                 <ExplanationCard data={data} />
                             </div>
@@ -32,7 +39,7 @@ const SliderHero = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SliderHero
+export default SliderHero;

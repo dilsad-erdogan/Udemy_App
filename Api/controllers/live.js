@@ -50,7 +50,7 @@ async function getLiveByLive (req, res) {
 
 async function addLive (req, res) {
     try{
-        const { teacher_id, title, description, video_png } = req.body;
+        const { teacher_id, title, description, video_png, video_url } = req.body;
 
         const t_id = await User.findById(teacher_id);
         if(!t_id || !t_id.is_active) {
@@ -62,6 +62,7 @@ async function addLive (req, res) {
             title: title,
             description: description,
             video_png: video_png,
+            video_url: video_url,
             date_time: Date.now(),
             is_active: true
         });

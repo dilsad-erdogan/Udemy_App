@@ -34,7 +34,7 @@ const Cart = () => {
                                     {cart.videos.map((video) => (
                                         <div key={video._id} className="flex items-center justify-between p-3 border-b">
                                             <div className="md:flex items-center space-x-4">
-                                                <img src={video.videoPng} alt="" className="w-16 h-16 object-contain rounded" />
+                                                <img src={video.video_png} alt="" className="w-16 h-16 object-contain rounded" />
 
                                                 <div className="flex-1 ml-4">
                                                     <h3 className="text-lg font-semibold">{video.title}</h3>
