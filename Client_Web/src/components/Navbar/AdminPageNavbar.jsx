@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 const AdminPageNavbar = () => {
   const navigate = useNavigate();
 
+  const logout = () => {
+    navigate('/');
+    localStorage.clear();
+  };
+
   return (
     <nav>
         <div className="container py-8 flex justify-between items-center">
@@ -35,7 +40,7 @@ const AdminPageNavbar = () => {
               </a>
             </div>
 
-            <button className="primary-btn">LogOut</button>
+            <button className="primary-btn" onClick={logout}>LogOut</button>
         </div>
     </nav>
   )

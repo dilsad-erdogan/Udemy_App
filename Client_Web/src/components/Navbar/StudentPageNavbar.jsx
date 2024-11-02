@@ -6,6 +6,11 @@ const StudentPageNavbar = () => {
   const videos = useSelector(state => state.cart.videos);
   const navigate = useNavigate();
 
+  const logout = () => {
+    navigate('/');
+    localStorage.clear();
+  };
+
   return (
     <nav>
         <div className="container py-8 flex justify-between items-center">
@@ -38,7 +43,7 @@ const StudentPageNavbar = () => {
                 </Link>
             </div>
 
-            <button className="primary-btn">LogOut</button>
+            <button className="primary-btn" onClick={logout}>LogOut</button>
         </div>
     </nav>
   )
