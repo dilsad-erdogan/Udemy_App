@@ -3,6 +3,7 @@ import StartingPage from "./pages/StartingPage";
 import StudentMain from "./pages/Student/Main";
 import StudentVideo from "./pages/Student/Video";
 import StudentCart from "./pages/Student/Cart";
+import StudentCheckout from "./pages/Student/Checkout";
 import WatchVideo from "./pages/Student/WatchVideo";
 import WatchLive from "./pages/Student/WatchLive";
 import TeacherMain from "./pages/Teacher/Main";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/student" element={<StudentMain />}></Route>
         <Route path="/student/video" element={<StudentVideo />}></Route>
         <Route path="/student/cart" element={<StudentCart />}></Route>
+        <Route path="/student/checkout" element={<StudentCheckout />}></Route>
         <Route path="/watch/:id" element={<WatchVideo />}></Route>
         <Route path="/watchLive/:id" element={<WatchLive />}></Route>
 

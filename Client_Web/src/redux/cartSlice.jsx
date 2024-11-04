@@ -21,7 +21,7 @@ const cartSlice = createSlice({
                     _id: newItem._id,
                     title: newItem.title,
                     description: newItem.description,
-                    teacher: newItem.teacher,
+                    teacher_id: newItem.teacher_id,
                     price: newItem.price,
                     video_png: newItem.video_png,
                     video_url: newItem.video_url,
@@ -41,9 +41,15 @@ const cartSlice = createSlice({
                 state.totalQuantity--;
                 state.videos = state.videos.filter(item => item._id !== id);
             }
+        },
+
+        clearCart: (state) => {
+            state.videos = [];
+            state.totalQuantity = 0;
+            state.totalPrice = 0;
         }
     },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer

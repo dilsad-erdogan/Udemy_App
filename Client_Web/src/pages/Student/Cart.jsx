@@ -3,10 +3,11 @@ import { PiEmptyBold } from "react-icons/pi";
 import { FaTrashAlt } from "react-icons/fa";
 import { removeFromCart } from "../../redux/cartSlice";
 import StudentPageNavbar from "../../components/Navbar/StudentPageNavbar";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    const navigate = useNavigate();
     const cart = useSelector(state => state.cart);
-    console.log(cart.videos)
     const dispatch = useDispatch();
 
     return (
@@ -68,7 +69,7 @@ const Cart = () => {
                                     <span>${cart.totalPrice.toFixed(2)}</span>
                                 </div>
 
-                                <button className="w-full bg-primary text-white py-2">Buy Them All</button>
+                                <button className="w-full bg-primary text-white py-2" onClick={() => navigate('/student/checkout')}>Buy Them All</button>
                             </div>
                         </div>
                     </div>
