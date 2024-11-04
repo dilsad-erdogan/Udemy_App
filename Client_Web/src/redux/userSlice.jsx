@@ -17,6 +17,15 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async (_, thunkAP
     }
 });
 
+export const fetchById = createAsyncThunk('users/fetchUserById', async (id, thunkAPI) => {
+    try {
+        const response = await userService.byId(id);
+        return response;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+    }
+});
+
 export const deleteUser = createAsyncThunk('users/deleteUser', async (id, thunkAPI) => {
     try {
         await userService.deleted(id);
@@ -85,6 +94,10 @@ const userSlice = createSlice({
                 state.error = action.payload;
             })
 
+            .addCase(fetchById.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = action.payload;
+            })
             .addCase(deleteUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.users = state.users.filter(user => user._id !== action.payload._id);

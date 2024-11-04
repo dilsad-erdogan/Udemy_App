@@ -15,6 +15,22 @@ async function getUser (req, res) {
     }
 }
 
+async function getUserById(req, res) {
+    try{
+        const id = req.params.id;
+        const user = await User.findById(id);
+
+        if(user && user.is_active === true) {
+            res.status(200).json({ success: true, data: user });
+        } else {
+            res.status(404).json({ success: false, message: 'User not found!' });
+        }
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error!' });
+    }
+};
+
 async function updateRole (req, res) {
     try{
         const id = req.params.id;
@@ -114,6 +130,7 @@ async function deleteUser (req, res) {
 
 module.exports = {
     getUser,
+    getUserById,
     updateRole,
     updateName,
     updateEmail,

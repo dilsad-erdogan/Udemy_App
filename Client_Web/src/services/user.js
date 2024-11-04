@@ -11,6 +11,16 @@ const get = async () => {
     }
 };
 
+const byId = async (id) => {
+    try{
+        const response = await axios.get(`${USER}/byId/${id}`);
+        return response.data;
+    } catch(error) {
+        console.error('User services error:', error);
+        throw error;
+    }
+};
+
 const deleted = async (id) => {
     try{
         const response = await axios.patch(`${USER}/delete/${id}`);
@@ -63,6 +73,7 @@ const updateEmail = async (id, data) => {
 
 const userService = {
     get,
+    byId,
     deleted,
     updateRole,
     updateName,
