@@ -1,14 +1,24 @@
+import { useState } from "react";
 import { FaSearch, FaShoppingCart } from "react-icons/fa"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom";
+import { setSearchTerm } from "../../redux/videoSlice";
 
 const StudentPageNavbar = () => {
   const videos = useSelector(state => state.cart.videos);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState();
 
   const logout = () => {
     navigate('/');
     localStorage.clear();
+  };
+  
+  const handleSearch = (e) => {
+    e.preventDefault();
+    dispatch(setSearchTerm(search));
+    navigate('/filter-data');
   };
 
   return (
@@ -21,8 +31,8 @@ const StudentPageNavbar = () => {
 
             {/* Search Section */}
             <div className="relative flex-1 mx-4">
-                <form>
-                    <input type="text" placeholder="Search Book" className="w-full border py-2 px-4" />
+                <form onSubmit={handleSearch}>
+                    <input type="text" placeholder="Search Book" className="w-full border py-2 px-4" onChange={(e) => setSearch(e.target.value)} />
                     <FaSearch className="absolute top-3 right-3 text-red-500" />
                 </form>
             </div>

@@ -4,6 +4,8 @@ import videoServices from "../services/video";
 const initialState = {
     videos: [],
     userVideos: [],
+    searchTerm: '',
+    filteredData: [],
     loading: false,
     error: null,
 };
@@ -103,6 +105,10 @@ const videoSlice = createSlice({
     name: 'videos',
     initialState,
     reducers: {
+        setSearchTerm(state, action) {
+            state.searchTerm = action.payload;
+            state.filteredData = state.videos.data.filter(video => video.title.toLowerCase().includes(state.searchTerm.toLowerCase()))
+        },
         clearError: (state) => {
             state.error = null;
         },
@@ -166,5 +172,5 @@ const videoSlice = createSlice({
     },
 });
 
-export const { clearError } = videoSlice.actions;
+export const { setSearchTerm, clearError } = videoSlice.actions;
 export default videoSlice.reducer;

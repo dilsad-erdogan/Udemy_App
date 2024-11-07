@@ -6,6 +6,7 @@ import StudentCart from "./pages/Student/Cart";
 import StudentCheckout from "./pages/Student/Checkout";
 import WatchVideo from "./pages/Student/WatchVideo";
 import WatchLive from "./pages/Student/WatchLive";
+import FilterData from "./pages/Student/FilterData";
 import TeacherMain from "./pages/Teacher/Main";
 import TeacherVideo from "./pages/Teacher/Video";
 import TeacherLive from "./pages/Teacher/Live";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/student/checkout" element={<StudentCheckout />}></Route>
         <Route path="/watch/:id" element={<WatchVideo />}></Route>
         <Route path="/watchLive/:id" element={<WatchLive />}></Route>
+        <Route path="/filter-data" element={<FilterData />}></Route>
 
         <Route path="/teacher" element={<TeacherMain />}></Route>
         <Route path="/teacher/video" element={<TeacherVideo />}></Route>
