@@ -3,6 +3,7 @@ import videoServices from "../services/video";
 
 const initialState = {
     videos: [],
+    userVideos: [],
     loading: false,
     error: null,
 };
@@ -126,10 +127,8 @@ const videoSlice = createSlice({
                 state.videos = action.payload;
             })
             .addCase(fetchVideoById.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index] = action.payload;
-                }
+                state.loading = false;
+                state.userVideos = action.payload;
             })
             .addCase(deleteVideo.fulfilled, (state, action) => {
                 state.videos = state.videos.filter(video => video._id !== action.payload._id);

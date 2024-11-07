@@ -3,7 +3,6 @@ import mServices from "../services/purchase";
 
 const initialState = {
     purchases: [],
-    userPurchases: [],
     loading: false,
     error: null,
 };
@@ -65,7 +64,7 @@ const purchaseSlice = createSlice({
             })
             .addCase(fetchPurchasesByUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.userPurchases = action.payload;
+                state.purchases = action.payload;
             })
             .addCase(fetchPurchasesByUser.rejected, (state, action) => {
                 state.loading = false;
