@@ -16,7 +16,7 @@ export const fetchVideos = createAsyncThunk('videos/fetchVideos', async (_, thun
         const response = await videoServices.get();
         return response;
     } catch (error) {
-        return thunkAPI.rejectWithValue(error);
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
 
@@ -70,7 +70,7 @@ export const updateVideoDescription = createAsyncThunk('videos/updateVideoDescri
         const response = await videoServices.updateDescription(id, data);
         return response;
     } catch (error) {
-        return thunkAPI.rejectWithValue(error);
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
 
@@ -140,34 +140,39 @@ const videoSlice = createSlice({
                 state.videos = state.videos.filter(video => video._id !== action.payload._id);
             })
             .addCase(updateVideoTitle.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index].title = action.payload.title;
-                }
+                state.videos = state.videos.data.map(video => 
+                    video._id === action.payload._id 
+                        ? { ...video, title: action.payload.title } 
+                        : video
+                );
             })
             .addCase(updateVideoDescription.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index].description = action.payload.description;
-                }
+                state.videos = state.videos.data.map(video => 
+                    video._id === action.payload._id 
+                        ? { ...video, description: action.payload.description } 
+                        : video
+                );
             })
             .addCase(updateVideoPng.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index].video_png = action.payload.video_png;
-                }
+                state.videos = state.videos.data.map(video => 
+                    video._id === action.payload._id 
+                        ? { ...video, video_png: action.payload.video_png } 
+                        : video
+                );
             })
             .addCase(updateVideoUrl.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index].video_url = action.payload.video_url;
-                }
+                state.videos = state.videos.data.map(video => 
+                    video._id === action.payload._id 
+                        ? { ...video, video_url: action.payload.video_url } 
+                        : video
+                );
             })
             .addCase(updateVideoPrice.fulfilled, (state, action) => {
-                const index = state.videos.findIndex(video => video._id === action.payload._id);
-                if (index !== -1) {
-                    state.videos[index].price = action.payload.price;
-                }
+                state.videos = state.videos.data.map(video => 
+                    video._id === action.payload._id 
+                        ? { ...video, price: action.payload.price } 
+                        : video
+                );
             });
     },
 });

@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar";
 import ReactPlayer from 'react-player';
-import { fetchVideosByUser } from "../../redux/videoSlice";
+import { deleteVideo, fetchVideosByUser, updateVideoDescription, updateVideoPrice, updateVideoTitle } from "../../redux/videoSlice";
 
 const UpdateVideo = () => {
     const { id } = useParams();
     const [video, setVideo] = useState();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const videos = useSelector(state => state.video.videos);
 
     useEffect(() => {
@@ -34,7 +35,25 @@ const UpdateVideo = () => {
     };
 
     const handleSubmit = () => {
-        console.log("submit");
+        const title = {
+            data: video.title
+        };
+        const description = {
+            data: video.description
+        };
+        const price = {
+            data: video.price
+        };
+        dispatch(updateVideoTitle({id: video._id, data: title}))
+        dispatch(updateVideoDescription({id: video._id, data: description}))
+        dispatch(updateVideoPrice({id: video._id, data: price}))
+
+        alert('All changes saved!');
+    };
+
+    const handleDelete = () => {
+        dispatch(deleteVideo(video._id));
+        navigate('/teacher');
     };
 
     if (!video) return <div>Loading...</div>;
@@ -43,7 +62,7 @@ const UpdateVideo = () => {
         <div>
             <TeacherPageNavbar />
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
                 <div className="col-span-2 flex justify-center items-center bg-gray-100 p-4">
                     <ReactPlayer url={video.video_url} controls width="100%" height="500px" />
                 </div>
@@ -64,9 +83,11 @@ const UpdateVideo = () => {
                         <input type="text" id="price" value={video.price} onChange={handleInputChange} className="w-full text-xl p-2 border rounded-md" />
                     </div>
 
-                    <button type="submit" className="primary-btn">Düzenle</button>
+                    <button type="submit" className="primary-btn" onClick={handleSubmit}>Edit</button>
+
+                    <button type="submit" className="primary-btn" onClick={handleDelete}>Delete</button>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };
