@@ -7,7 +7,6 @@ import { fetchVideos } from '../../redux/videoSlice';
 
 const FilterData = () => {
     const filterVideos = useSelector(state => state.video.filteredData);
-    console.log(filterVideos)
     const dispatch = useDispatch();
 
     useEffect(() => {
