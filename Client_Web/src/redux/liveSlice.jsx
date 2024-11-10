@@ -118,28 +118,31 @@ const liveSlice = createSlice({
             })
 
             .addCase(updateLiveTitle.fulfilled, (state, action) => {
-                const index = state.liveData.findIndex((live) => live._id === action.payload._id);
-                if (index !== -1) {
-                    state.liveData[index].title = action.payload;
-                }
+                state.liveData = state.liveData.data.map(live => 
+                    live._id === action.payload._id 
+                        ? { ...live, title: action.payload.title } 
+                        : live
+                );
             })
 
             .addCase(updateLiveDescription.fulfilled, (state, action) => {
-                const index = state.liveData.findIndex((live) => live._id === action.payload._id);
-                if (index !== -1) {
-                    state.liveData[index].description = action.payload;
-                }
+                state.liveData = state.liveData.data.map(live => 
+                    live._id === action.payload._id 
+                        ? { ...live, description: action.payload.description } 
+                        : live
+                );
             })
 
             .addCase(updateLivePng.fulfilled, (state, action) => {
-                const index = state.liveData.findIndex((live) => live._id === action.payload._id);
-                if (index !== -1) {
-                    state.liveData[index].video_png = action.payload;
-                }
+                state.liveData = state.videos.data.map(live => 
+                    live._id === action.payload._id 
+                        ? { ...live, video_png: action.payload.video_png } 
+                        : live
+                );
             })
 
-            .addCase(deleteLive.fulfilled, (state, action) => {
-                state.liveData = state.liveData.filter((live) => live._id !== action.payload);
+            .addCase(deleteLive.fulfilled, (state) => {
+                state.loading = false;
             })
     },
 });
