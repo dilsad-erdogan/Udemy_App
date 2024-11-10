@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchUsers } from "../../redux/userSlice";
+import { deleteUser, fetchUsers } from "../../redux/userSlice";
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,11 @@ const Users = () => {
   }, [dispatch]);
 
   const userEdit = (data) => {console.log(data)};
-  const userDelete = (data) => {console.log(data)};
+
+  const userDelete = async (userId) => {
+    await dispatch(deleteUser(userId));
+    dispatch(fetchUsers());
+  };
 
   return (
     <main className="overflow-x-hidden bg-white text-dark">
@@ -49,10 +53,6 @@ const Users = () => {
                   ))}
                 </tbody>
               </table>
-            
-              <div className="flex justify-end mt-4">
-                <button className="primary-btn">Add</button>
-              </div>
             </div>
           </div>
         </div>
