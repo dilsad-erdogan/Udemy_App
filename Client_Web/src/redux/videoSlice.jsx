@@ -136,8 +136,8 @@ const videoSlice = createSlice({
                 state.loading = false;
                 state.userVideos = action.payload;
             })
-            .addCase(deleteVideo.fulfilled, (state, action) => {
-                state.videos = state.videos.filter(video => video._id !== action.payload._id);
+            .addCase(deleteVideo.fulfilled, (state) => {
+                state.loading = false;
             })
             .addCase(updateVideoTitle.fulfilled, (state, action) => {
                 state.videos = state.videos.data.map(video => 
