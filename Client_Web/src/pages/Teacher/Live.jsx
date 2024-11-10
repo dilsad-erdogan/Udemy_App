@@ -1,17 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 import TeacherPageNavbar from "../../components/Navbar/TeacherPageNavbar";
+import { useDispatch } from "react-redux";
+import { addLive } from "../../redux/liveSlice";
 
 const Live = () => {
   const videoRef = useRef(null);
+  const dispatch = useDispatch();
   const [screenStream, setScreenStream] = useState(null);
 
   const [title, setTitle] = useState('');
   const [png, setPng] = useState('');
-  const [price, setPrice] = useState('');
   const [desc, setDesc] = useState('');
 
   const startScreenShare = async () => {
-    if(title === '' && png === '' && price === '' && desc === ''){
+    if(title === '' && png === '' && desc === ''){
       alert('Please, enter in the inputs.');
     } else {
       try {
@@ -19,6 +21,19 @@ const Live = () => {
           video: true,
         });
         setScreenStream(stream);
+
+        const id = JSON.parse(localStorage.getItem('user')).user._id;
+
+        const streamUrl = `rtmp://example.com/live/${id}`;
+        const newLive = {
+          teacher_id: id,
+          title: title,
+          description: desc,
+          video_png: png,
+          video_url: streamUrl
+        };
+
+        dispatch(addLive(newLive));
       } catch (error) {
         console.error("Error sharing screen: ", error);
       }      
@@ -62,11 +77,6 @@ const Live = () => {
           <div>
             <label className="block text-xl font-semibold mb-2">Video Png</label>
             <input type="text" value={png} onChange={(e) => setPng(e.target.value)} className="w-full text-xl p-2 border rounded-md" placeholder="Enter video png url" />
-          </div>
-
-          <div>
-            <label className="block text-xl font-semibold mb-2">Price</label>
-            <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full text-xl p-2 border rounded-md" placeholder="Enter price" />
           </div>
 
           <div>
