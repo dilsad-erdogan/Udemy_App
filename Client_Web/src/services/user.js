@@ -33,7 +33,7 @@ const deleted = async (id) => {
 
 const updateRole = async (id, data) => {
     try{
-        const response = await axios.put(`${USER}/updateRole${id}`, data);
+        const response = await axios.put(`${USER}/updateRole/${id}`, data);
         return response.data;
     } catch (error){
         console.error('User services error:', error);
@@ -43,7 +43,7 @@ const updateRole = async (id, data) => {
 
 const updateName = async (id, data) => {
     try{
-        const response = await axios.put(`${USER}/updateName${id}`, data);
+        const response = await axios.put(`${USER}/updateName/${id}`, data);
         return response.data;
     } catch (error){
         console.error('User services error:', error);
@@ -53,7 +53,7 @@ const updateName = async (id, data) => {
 
 const updatePassword = async (id, data) => {
     try{
-        const response = await axios.put(`${USER}/updatePassword${id}`, data);
+        const response = await axios.put(`${USER}/updatePassword/${id}`, data);
         return response.data;
     } catch (error){
         console.error('User services error:', error);
@@ -63,7 +63,7 @@ const updatePassword = async (id, data) => {
 
 const updateEmail = async (id, data) => {
     try{
-        const response = await axios.put(`${USER}/updateEmail${id}`, data);
+        const response = await axios.put(`${USER}/updateEmail/${id}`, data);
         return response.data;
     } catch (error){
         console.error('User services error:', error);

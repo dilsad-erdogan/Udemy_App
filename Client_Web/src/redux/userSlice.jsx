@@ -103,28 +103,32 @@ const userSlice = createSlice({
             })
 
             .addCase(updateUserRole.fulfilled, (state, action) => {
-                const index = state.users.findIndex(user => user._id === action.payload._id);
-                if (index !== -1) {
-                    state.users[index] = { ...state.users[index].role, ...action.payload };
-                }
+                state.users = state.users.data.map(user =>
+                    user._id === action.payload._id
+                    ? { ...user, role: action.payload.role }
+                    : user
+                );
             })
             .addCase(updateUserName.fulfilled, (state, action) => {
-                const index = state.users.findIndex(user => user._id === action.payload._id);
-                if (index !== -1) {
-                    state.users[index].name = action.payload.name;
-                }
+                state.users = state.users.data.map(user =>
+                    user._id === action.payload._id
+                    ? { ...user, name: action.payload.name }
+                    : user
+                );
             })
             .addCase(updateUserEmail.fulfilled, (state, action) => {
-                const index = state.users.findIndex(user => user._id === action.payload._id);
-                if (index !== -1) {
-                    state.users[index].email = action.payload.email;
-                }
+                state.users = state.users.data.map(user =>
+                    user._id === action.payload._id
+                    ? { ...user, email: action.payload.email }
+                    : user
+                );
             })
             .addCase(updateUserPassword.fulfilled, (state, action) => {
-                const index = state.users.findIndex(user => user._id === action.payload._id);
-                if (index !== -1) {
-                    state.users[index].password = action.payload.password;
-                }
+                state.users = state.users.data.map(user =>
+                    user._id === action.payload._id
+                    ? { ...user, password: action.payload.password }
+                    : user
+                );
             });
     },
 });

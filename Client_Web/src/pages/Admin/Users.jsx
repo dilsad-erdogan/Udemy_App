@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteUser, fetchUsers } from "../../redux/userSlice";
+import Modal from "../../components/Modal";
+import UserEdit from "../../components/Edits/UserEdit";
 
 const Users = () => {
   const dispatch = useDispatch();
   const users = useSelector(state => state.user.users);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState('');
 
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const userEdit = (data) => {console.log(data)};
+  const userEdit = (data) => {
+    setSelectedUser(data);
+    setIsModalOpen(true);
+  };
 
   const userDelete = async (userId) => {
     await dispatch(deleteUser(userId));
@@ -42,7 +49,7 @@ const Users = () => {
                     <tr key={data._id}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.name}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.email}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.role}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.role === "67227987d6d3c54d653c3826" ? <span>Student</span> : (data.role === "67227a6ed6d3c54d653c3830" ? <span>Teacher</span> : <span>Admin</span>)}</td>
                       <td className="px-6 py-4 whitespace-nowrap justify-center text-sm font-medium">
                         <button type="button" className="primary-btn" onClick={() => userEdit(data._id)}>Edit</button>
                       </td>
@@ -57,6 +64,10 @@ const Users = () => {
           </div>
         </div>
       </div>
+
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+          <UserEdit id={selectedUser}/>
+      </Modal>
     </main>
   )
 }
