@@ -15,7 +15,7 @@ const Footer = () => {
       </div>
 
       {/* Footer links */}
-      <div className="col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10">
+      <div className="md:pr-10">
         <div className="py-8 px-4 col-span-2 sm:col-auto">
           <h1 className="text-xl font-bold sm:text-left mb-3 text-primary">Address</h1>
           <div>
