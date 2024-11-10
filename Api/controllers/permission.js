@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 async function getPermission (req, res) {
     try{
-        const permission = await Permission.find({ is_active: true });
+        const permission = await Permission.find();
 
         if(permission) {
             res.status(200).json({ success: true, data: permission });

@@ -87,11 +87,11 @@ const permissionSlice = createSlice({
             })
 
             .addCase(updatePermission.fulfilled, (state, action) => {
-                state.loading = false;
-                const index = state.permissions.findIndex(permission => permission._id === action.payload._id);
-                if (index !== -1) {
-                    state.permissions[index].permission_status = action.payload;
-                }
+                state.permissions = state.permissions.data.map(permission => 
+                    permission._id === action.payload._id 
+                        ? { ...permission, permission_status: action.payload.permission_status } 
+                        : permission
+                );
             })
     },
 });
