@@ -2,17 +2,30 @@ import { useEffect } from "react";
 import AdminPageNavbar from "../../components/Navbar/AdminPageNavbar"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchPurchases } from "../../redux/purchaseSlice";
+import { fetchUsers } from "../../redux/userSlice";
+import { fetchVideos } from "../../redux/videoSlice";
 
 const Purchases = () => {
   const dispatch = useDispatch();
   const purchases = useSelector(state => state.purchase.purchases);
+  const users = useSelector(state => state.user.users);
+  const videos = useSelector(state => state.video.videos);
 
   useEffect(() => {
     dispatch(fetchPurchases());
+    dispatch(fetchUsers());
+    dispatch(fetchVideos());
   }, [dispatch]);
 
-  const userEdit = (data) => {console.log(data)};
-  const userDelete = (data) => {console.log(data)};
+  const getUserName = (id) => {
+    const user = users?.data?.find(u => u._id === id);
+    return user ? user.name : "Unknown User";
+  };
+
+  const getUserVideo = (id) => {
+    const video = videos?.data?.find(v => v._id === id);
+    return video ? video.title : "Unknown Video";
+  };
 
   return (
     <main className="overflow-x-hidden bg-white text-dark">
@@ -27,30 +40,18 @@ const Purchases = () => {
                   <tr>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">User</th>
                     <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Video</th>
-                    <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Edit</th>
-                    <th scope="col" className="px-6 py-3 text-start text-s font-medium uppercase">Delete</th>
                   </tr>
                 </thead>
             
                 <tbody className="divide-y divide-black">
                   {purchases?.data?.map((data) => (
                     <tr key={data._id}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.user_id}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{data.video_id}</td>
-                      <td className="px-6 py-4 whitespace-nowrap justify-center text-sm font-medium">
-                        <button type="button" className="primary-btn" onClick={() => userEdit(data._id)}>Edit</button>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap justify-center text-sm font-medium">
-                        <button type="button" className="primary-btn" onClick={() => userDelete(data._id)}>Delete</button>
-                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{getUserName(data.user_id)}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">{getUserVideo(data.video_id)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            
-              <div className="flex justify-end mt-4">
-                <button className="primary-btn">Add</button>
-              </div>
             </div>
           </div>
         </div>
