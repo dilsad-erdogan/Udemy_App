@@ -17,3 +17,60 @@
         filter: drop-shadow(6px 8px 10px rgba(0, 0, 0, 0.5));
     }
 }
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 300px;
+    padding-top: 30px;
+}
+  
+.messages .userMsg, .messages .responseMsg {
+    clear: both;
+    background-color: #3d424b;
+    padding: 15px;
+    border-radius: 30px;
+    max-width: 60vw;
+    min-width: 20vw;
+    white-space: pre-line;
+}
+
+.messages .userMsg {
+    align-self: flex-end;
+}
+
+.messages .responseMsg {
+    align-self: flex-start;
+    margin-top: 15px;
+}
+
+@media (max-width: 1200px) {
+    .messages {
+        padding: 0 20px;
+    }
+
+    .messages .userMsg, .messages .responseMsg {
+        max-width: 80vw;
+        min-width: 50vw;
+    }
+
+    .inputBox {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .boxes {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .card {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+}

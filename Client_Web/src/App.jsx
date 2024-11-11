@@ -17,6 +17,7 @@ import Lives from "./pages/Admin/Lives";
 import Permissions from "./pages/Admin/Permissions";
 import Purchases from "./pages/Admin/Purchases";
 import Footer from "./components/Footer";
+import Chatbot from "./pages/Student/Chatbot";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
         <Route path="/admin/lives" element={<Lives />}></Route>
         <Route path="/admin/permissions" element={<Permissions />}></Route>
         <Route path="/admin/purchases" element={<Purchases />}></Route>
+
+        <Route path="/chatbot" element={<Chatbot />}></Route>
       </Routes>
 
       <Footer />

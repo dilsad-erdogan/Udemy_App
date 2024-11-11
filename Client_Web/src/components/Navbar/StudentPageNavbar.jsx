@@ -43,6 +43,11 @@ const StudentPageNavbar = () => {
                     My Videos
                 </div>
 
+                <div onClick={() => navigate('/chatbot')} className="inline-block py-2 px-3 hover:text-secondary relative group font-bold">
+                    <div className="w-2 h-2 absolute bg-secondary mt-2 rounded-full left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden"></div>
+                    Search AI
+                </div>
+
                 <Link to="/student/cart" className="relative">
                     <FaShoppingCart className="hover:text-secondary relative font-bold" />
                     {videos.length > 0 && (
