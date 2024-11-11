@@ -36,9 +36,9 @@ export const addPermission = createAsyncThunk('permissions/addPermission', async
     }
 });
 
-export const updatePermission = createAsyncThunk('permissions/updatePermission', async ({ id, permission_status }, thunkAPI) => {
+export const updatePermission = createAsyncThunk('permissions/updatePermission', async ({ id, data }, thunkAPI) => {
     try {
-        const response = await permissionServices.update(id, permission_status);
+        const response = await permissionServices.update(id, data);
         return response;
     } catch (error) {
         return thunkAPI.rejectWithValue(error);
