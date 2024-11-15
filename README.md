@@ -2,31 +2,31 @@
 
 - Double authenticated login and registration system
 
-## - If you are a student
+#### - If you are a student
 - Watch free live lecture broadcasts and message other students
 - Ability to purchase the course content you want to watch
 - Watch purchased content unlimitedly!
 - Benefit from AI in any field you want
 
-## - If you are a teacher
+#### - If you are a teacher
 - Start a live broadcast whenever you want and present it to your students
 - If you have prepared a course recording, send it to admin for permission
 - If permission is granted for registration, publish your course and present it to your students
 - You can edit your previously published courses at any time.
 
-## - If you are a admin
+#### - If you are a admin
 - You can see courses, live broadcasts and purchases in detail
 - It is your duty to review the content submitted for permission and whether to approve it for publication
 
 
 # Screenshots
 
-## - Starting Page
+#### - Starting Page
 
 ![starting_page](https://github.com/user-attachments/assets/3509a8b4-ed12-40fe-97e6-5b0cc75c18af)
 
 
-## - Student:
+#### - Student:
 
 - Main Page
 
@@ -40,7 +40,7 @@
 
 ![student_cart](https://github.com/user-attachments/assets/31842d64-96a4-4ebc-afe7-706f03665c74)
 
-## - Teacher:
+#### - Teacher:
 
 - Send Video Page
 
@@ -50,7 +50,7 @@
 
 ![teacher_addLive](https://github.com/user-attachments/assets/b63f5326-084e-4355-8765-0c72541f64a5)
 
-## - Admin:
+#### - Admin:
 
 - Permission Table Page
 
