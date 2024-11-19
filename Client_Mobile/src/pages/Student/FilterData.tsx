@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Button, SafeAreaView } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/AppNavigator';
+import StudentPageNavbar from '../../components/Navbar/StudentPageNavbar';
 
-const FilterData = () => {
+type Props = StackScreenProps<RootStackParamList, 'StudentFilterData'>;
+
+const StudentFilterData: React.FC<Props> = ({ navigation }) => {
   return (
-    <div>FilterData</div>
-  )
+    <SafeAreaView className='bg-white text-dark'>
+      <StudentPageNavbar />
+      <Button title="Go to Student Watch Video" onPress={() => navigation.navigate('StudentWatchVideo')} />
+    </SafeAreaView>
+  );
 }
 
-export default FilterData
+export default StudentFilterData

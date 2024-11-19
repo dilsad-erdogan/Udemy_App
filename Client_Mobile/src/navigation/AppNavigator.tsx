@@ -54,7 +54,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="StartingPage">
+      <Stack.Navigator initialRouteName="StartingPage" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="StartingPage" component={StartingPage} />
         <Stack.Screen name="StudentCart" component={StudentCart} />
         <Stack.Screen name="StudentChatbot" component={StudentChatbot} />
@@ -63,6 +63,7 @@ const AppNavigator = () => {
         <Stack.Screen name="StudentMain" component={StudentMain} />
         <Stack.Screen name="StudentVideo" component={StudentVideo} />
         <Stack.Screen name="StudentWatchLive" component={StudentWatchLive} />
+        <Stack.Screen name="StudentWatchVideo" component={StudentWatchVideo} />
         <Stack.Screen name="TeacherLive" component={TeacherLive} />
         <Stack.Screen name="TeacherMain" component={TeacherMain} />
         <Stack.Screen name="TeacherUpdateVideo" component={TeacherUpdateVideo} />

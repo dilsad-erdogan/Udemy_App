@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { Button, SafeAreaView } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../../navigation/AppNavigator';
+import StudentPageNavbar from '../../components/Navbar/StudentPageNavbar';
 
 type Props = StackScreenProps<RootStackParamList, 'StudentMain'>;
 
 const StudentMain: React.FC<Props> = ({ navigation }) => {
   return (
-    <View className='flex-1 justify-center items-center'>
-      <Text className='text-3xl font-bold'>Student Main Page</Text>
-      <Button title="Go to Video" onPress={() => navigation.navigate('StudentVideo')} />
-    </View>
+    <SafeAreaView className='bg-white text-dark'>
+      <StudentPageNavbar />
+      <Button title="Go to Student Video" onPress={() => navigation.navigate('StudentVideo')} />
+    </SafeAreaView>
   );
 };
 

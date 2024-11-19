@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Button, SafeAreaView } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/AppNavigator';
+import AdminPageNavbar from '../../components/Navbar/AdminPageNavbar';
 
-const Lives = () => {
+type Props = StackScreenProps<RootStackParamList, 'AdminLive'>;
+
+const AdminLive: React.FC<Props> = ({ navigation }) => {
   return (
-    <div>Lives</div>
-  )
+    <SafeAreaView className='bg-white text-dark'>
+      <AdminPageNavbar />
+      <Button title="Go to Student Video" onPress={() => navigation.navigate('AdminPermission')} />
+    </SafeAreaView>
+  );
 }
 
-export default Lives
+export default AdminLive
