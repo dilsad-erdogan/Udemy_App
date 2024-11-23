@@ -37,11 +37,11 @@ const StartPageNavbar = () => {
 
       <Modal visible={isModalOpen} animationType='slide' transparent={true}>
         <View className='flex flex-1 justify-center items-center bg-gray-300 p-10'>
-          { isLogin === "login" && <Login /> }
-          { isLogin === "register" && <Register /> }
-          { isLogin === "falogin" && <FaLogin /> }
+          { isLogin === "login" && <Login openFALogin={openFALogin} openRegister={openRegister} /> }
+          { isLogin === "register" && <Register openLogin={openLogin} /> }
+          { isLogin === "falogin" && <FaLogin openLogin={openLogin} openRegister={openRegister} /> }
 
-          <TouchableOpacity className='mt-5 p-2 bg-gray-700' onPress={() => setIsModalOpen(false)}>
+          <TouchableOpacity className='mt-5 p-2 bg-primary rounded-lg' onPress={() => setIsModalOpen(false)}>
             <Text className='text-white text-2xl'>Close</Text>
           </TouchableOpacity>
         </View>
