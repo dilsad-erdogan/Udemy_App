@@ -10,7 +10,7 @@ const AdminLive: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView className='bg-white text-dark'>
       <AdminPageNavbar />
-      <Button title="Go to Student Video" onPress={() => navigation.navigate('AdminPermission')} />
+      <Button title="Go to Permission" onPress={() => navigation.navigate('AdminPermission')} />
     </SafeAreaView>
   );
 }

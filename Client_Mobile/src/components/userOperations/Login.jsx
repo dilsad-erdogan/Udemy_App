@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { authService } from '../../services/auth';
 
 const Login = ({ openFALogin, openRegister }) => {
   const [email, setEmail] = useState('');

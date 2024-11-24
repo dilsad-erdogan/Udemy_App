@@ -10,7 +10,7 @@ const AdminVideo: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView className='bg-white text-dark'>
       <AdminPageNavbar />
-      <Button title="Go to Student Video" onPress={() => navigation.navigate('StartingPage')} />
+      <Button title="Go to Live" onPress={() => navigation.navigate('AdminLive')} />
     </SafeAreaView>
   );
 }
